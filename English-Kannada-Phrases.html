@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kannada-English Dictionary</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+    .entry { margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    .keyword { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Kannada-English Dictionary Search</h1>
+  <input type="text" id="searchBox" placeholder="Search for a word or phrase..." onkeyup="filterEntries()">
+
+  <div id="dictionary">
+    <div class="entry">
+      <div class="keyword">ಅಂಗಡಿ ಇಡುವುದು</div>
+      <div>angaḍi iḍuvudu - to open a shop</div>
+      <div>Keywords: ಅಂಗಡಿ, ಇಡುವುದು</div>
+    </div>
+    <div class="entry">
+      <div class="keyword">ಅಂಗಿ ಧರಿಸುವುದು</div>
+      <div>angi dharisuvudu - to wear a shirt</div>
+      <div>Keywords: ಅಂಗಿ, ಧರಿಸುವುದು</div>
+    </div>
+    <div class="entry">
+      <div class="keyword">ಅವಕಾಶವನ್ನು ಬಳಸಿಕೊಳ್ಳುವುದು</div>
+      <div>avakāśavannu baḷasikouvudu - to make use of an opportunity</div>
+      <div>Keywords: ಅವಕಾಶ, ಬಳಸಿಕೊಳ್ಳು</div>
+    </div>
+    <!-- Add more entries as needed -->
+  </div>
+
+  <script>
+    function filterEntries() {
+      var input = document.getElementById("searchBox").value.toLowerCase();
+      var entries = document.getElementsByClassName("entry");
+
+      for (var i = 0; i < entries.length; i++) {
+        var text = entries[i].textContent.toLowerCase();
+        entries[i].style.display = text.includes(input) ? "block" : "none";
+      }
+    }
+  </script>
+</body>
+</html>
